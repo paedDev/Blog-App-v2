@@ -72,6 +72,7 @@ export const deleteABlog = async (req, res) => {
     if (!findCurrentBlog) {
       return res.status(404).json({ message: "Blog not found" });
     }
+    return res.status(200).json({ message: "Successfully Deleted" });
   } catch (err) {
     console.log(err);
     return res

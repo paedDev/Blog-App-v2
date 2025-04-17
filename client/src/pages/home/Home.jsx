@@ -26,13 +26,14 @@ const Home = () => {
     }, []);
     return (
         <div className='max-w-8xl mx-auto p-8 space-y-5'>
+
             <h1>Blog Lists</h1>
             {
                 loading ? (<h1>Loading Blogs! Please wait</h1>) : (
                     <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4'>
                         {blogList && blogList.length ?
                             blogList.map((blogItem) => (
-                                <BlogList blogItem={blogItem} />
+                                <BlogList blogItem={blogItem} fetchListOfBlogs={fetchListOfBlogs} />
                             ))
                             : (<h3>No Blogs Added</h3>)}
 
